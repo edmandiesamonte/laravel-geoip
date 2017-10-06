@@ -43,6 +43,9 @@ abstract class AbstractService implements ServiceInterface
      */
     public function hydrate(array $attributes = [])
     {
+        $attributes['latitude'] = $attributes['lat'];
+        $attributes['longitude'] = $attributes['lon'];
+        $attributes['country_code'] = $attributes['iso_code'];
         return new Location($attributes);
     }
 
